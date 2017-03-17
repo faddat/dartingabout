@@ -1,0 +1,30 @@
+<h1>My First AngularDart App</h1>
+
+
+<post [visible]="showMaxHeightDialog">
+    <material-dialog class="max-height-dialog">
+
+        <h3 header>Dialog title</h3>
+
+        <p *ngFor="let maxHeightDialogLine of maxHeightDialogLines">
+            {{maxHeightDialogLine}}
+        </p>
+
+        <div footer>
+            <material-button (trigger)="removeMaxHeightDialogLine()"
+                             [disabled]="maxHeightDialogLines.isEmpty"
+                             class="white">
+                Remove Some Text
+            </material-button>
+            <material-button (trigger)="addMaxHeightDialogLine()" class="white">
+                Add Some Text
+            </material-button>
+            <material-button autoFocus (trigger)="showMaxHeightDialog = false" class="white">
+                Close
+            </material-button>
+        </div>
+
+    </material-dialog>
+</post>
+
+
